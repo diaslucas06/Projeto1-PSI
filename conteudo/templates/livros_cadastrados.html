@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Seus livros
+{% endblock %}
+
+{% block content %}
+    <h1>Seus livros</h1>
+    <h2>Não lidos</h2>
+    <ul>
+        {% for livro in livros %} 
+            {% if not livro.lido %}
+                <li>
+                    {{livro.titulo}},
+                    {{livro.genero}},
+                    {{livro.desc}}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <h2>Lidos</h2>
+    <ul>
+        {% for livro in livros %} 
+            {% if livro.lido %}
+                <li>
+                    {{livro.titulo}},
+                    {{livro.genero}},
+                    {{livro.desc}}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <a href="{{url_for('cadastro_livros')}}">Cadastrar mais livros</a>
+   <form action="{{url_for('logout')}}" method="post">
+        <button>Sair</button>
+   </form>
+        
+{% endblock %}
