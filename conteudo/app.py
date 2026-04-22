@@ -57,3 +57,29 @@ def botao_pagLivros():
     if not user:
         return redirect(url_for('cadastro'))
     return redirect(url_for('livros_cadastrados'))
+
+@app.route('/excluirlivro/indice')
+def excluir_livro(indice):
+    global livros
+    if 0 <= indice < len(livros):
+        livros.pop(indice) 
+    return redirect(url_for('livros_cadastrados'))
+
+@app.route('/editarlivro/indice', methods=['GET', 'POST'])
+def editar_livro(indice):
+    global livros
+    
+    if request.method == 'GET':
+        if 0 <= indice < len(livros):
+            livro = livros[indice]
+            return render_template( livro=livro, indice=indice)
+        return redirect(url_for('livros_cadastrados'))
+
+    livros[indice] = {
+        "titulo": request.form.get('titulo'),
+        "genero": request.form.get('genero'),
+        "desc": request.form.get('descricao'),
+        "lido": request.form.get('lido') == 'on'
+    }
+    return redirect(url_for('livros_cadastrados'))
+    
