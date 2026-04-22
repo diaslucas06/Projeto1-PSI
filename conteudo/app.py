@@ -51,3 +51,9 @@ def logout():
     user = None
     livros = []
     return redirect(url_for('index'))
+
+@app.route('/livros_cadastrados', methods=['POST'])
+def botao_pagLivros():
+    if not user:
+        return redirect(url_for('cadastro'))
+    return redirect(url_for('livros_cadastrados'))

@@ -13,6 +13,10 @@
         <input type="text" name="titulo" placeholder="Insira o título do livro">
         <input type="text" name="genero" placeholder="Insira o gênero do livro">
         <input type="text" name="descricao" placeholder="Insira a descrição do livro">
-        <button>Enviar</button>
+        <button id="BotaoLivro">Enviar</button>
+        <p class="mensagem1"></p>
+    </form>
+    <form action="{{url_for('botao_pagLivros')}}" method="post">
+        <button>Ir para a página de livros</button>
     </form>
 {% endblock %}
