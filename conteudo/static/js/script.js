@@ -1,7 +1,6 @@
 const BotaoCadastro = document.getElementById('BotaoCadastro')
 const BotaoLivro = document.getElementById('BotaoLivro')
 const mensagem = document.getElementById('mensagem')
-const mensagem1 = document.getElementById('mensagem1')
 
 BotaoCadastro.addEventListener('click', (event) => {
     event.preventDefault();
@@ -34,22 +33,22 @@ BotaoLivro.addEventListener('click', (event) => {
     let descricao = document.getElementsByName('descricao')[0].value;
 
     if (!titulo && !genero && !descricao) {
-        mensagem1.innerText = "Preencha os campos!";
+        mensagem.innerText = "Preencha os campos!";
         return
     }
 
     else if (!titulo) {
-        mensagem1.innerText = "Insira um título para o seu livro!";
+        mensagem.innerText = "Insira um título para o seu livro!";
         return
     }
 
     else if (!genero) {
-        mensagem1.innerText = "Insira um gênero para o seu livro!";
+        mensagem.innerText = "Insira um gênero para o seu livro!";
         return
     }
 
     else if (!descricao) {
-        mensagem1.innerText = "Insira uma descrição para o seu livro!";
+        mensagem.innerText = "Insira uma descrição para o seu livro!";
         return
     }
 
