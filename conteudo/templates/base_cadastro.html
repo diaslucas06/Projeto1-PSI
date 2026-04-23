@@ -9,16 +9,32 @@
         {% endblock %}
     </title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style_cadastro.css')}}">
 </head>
 <body>
-    <div>
-        {% block titulo %}
+    <header>
+        <div class="cabecalho">
+            <div class="logo">
+                <img src="{{url_for('static', filename='images/logo.png')}}" alt="IMG logo">
+                <h1>Bookshelf</h1>
+            </div>
+            <div class="opcoes">
+                <a href="{{url_for('index')}}">Início</a>
+                <a href="{{url_for('cadastro')}}">Cadastro</a>
+                <a href="{{url_for('livros_cadastrados')}}">Seus livros</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="content">
+            {% block titulo %}
 
-        {% endblock %}
-        {% block form %}
+            {% endblock %}
+            {% block form %}
 
-        {% endblock %}
-    </div>
+            {% endblock %}
+        </div>
+    </main>
     <script src="{{url_for('static', filename='js/script.js')}}"></script>
 </body>
 </html>

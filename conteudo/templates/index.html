@@ -5,7 +5,19 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Título (ainda falta decidir)</h1>
-    <p>Bem vindo, realize seu cadastro no ... para cadastrar todos os livros que você pretende ler e/ou comprar, dessa forma você será sua <b>biblioteca particular</b>, na qual poderá definir os livros que já leu e separá-los por gênero.</p>
-    <a href="{{url_for('cadastro')}}">Realize seu cadastro</a>
+    <h1>Bookshelf, sua biblioteca particular</h1>
+    <p>Bem-vindo ao <b>Bookshelf</b>, o refúgio perfeito para a sua paixão literária! Aqui você tem a liberdade de organizar cada detalhe da sua jornada de leitura. Crie sua conta agora para listar os livros que deseja comprar ou aquelas obras que mal pode esperar para ler. Com o Bookshelf, você monta uma <b>biblioteca particular:</b>  registre os títulos que já passaram pelas suas mãos e organize todo o seu acervo por gênero. Transforme sua estante em uma experiência organizada e personalizada!</p>
+    <a href="{{url_for('cadastro')}}">Realize seu cadastro no Bookshelf ></a>
+    <div class="livros">
+        <h1>Sugestões literárias para a sua estante virtual</h1>
+        <div id="livros">
+            <img src="{{url_for('static', filename='images/books/capitaesdeareia.jpg')}}" alt="Livro">
+            <img src="{{url_for('static', filename='images/books/claradosanjos.jpg')}}" alt="Livro">
+            <img src="{{url_for('static', filename='images/books/domcasmurro.jpg')}}" alt="Livro">
+            <img src="{{url_for('static', filename='images/books/memoriaspostumas.jpg')}}" alt="Livro">
+            <img src="{{url_for('static', filename='images/books/oalquimista.jpg')}}" alt="Livro">
+            <img src="{{url_for('static', filename='images/books/ocortico.jpg')}}" alt="Livro">
+            <img src="{{url_for('static', filename='images/books/quartodedespejo.jpg')}}" alt="Livro">
+        </div>
+    </div>
 {% endblock %}

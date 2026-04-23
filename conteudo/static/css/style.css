@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Felipa&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(72, 111, 138);
+    border-bottom: 5px solid rgb(39, 66, 85);
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 15px 0px;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo img {
+    width: 50px;
+}
+
+h1 {
+    font-family: "Felipa", serif;
+    font-size: 36px;
+}
+
+.logo h1 {
+    font-size: 44px;
+}
+
+.opcoes {
+    display: flex;
+    gap: 25px;
+}
+
+.opcoes a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 25px;
+}
+
+.content p {
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.content a {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: none;
+    background-color: rgb(39, 66, 85);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.livros {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+    padding: 25px 50px;
+    background-color: rgb(72, 111, 138);
+    border-radius: 20px;
+}
+
+#livros {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#livros img {
+    width: 13%;
+    border-radius: 5px;
+}

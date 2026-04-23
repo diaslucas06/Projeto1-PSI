@@ -14,19 +14,22 @@
     <header>
         <div class="cabecalho">
             <div class="logo">
-                <img src="" alt="">
-                <h1>Título</h1>
+                <img src="{{url_for('static', filename='images/logo.png')}}" alt="IMG logo">
+                <h1>Bookshelf</h1>
             </div>
             <div class="opcoes">
+                <a href="{{url_for('index')}}">Início</a>
                 <a href="{{url_for('cadastro')}}">Cadastro</a>
                 <a href="{{url_for('livros_cadastrados')}}">Seus livros</a>
             </div>
         </div>
     </header>
     <main>
-        {% block content %}
+        <div class="content">
+            {% block content %}
         
-        {% endblock %}
+            {% endblock %}
+        </div>
     </main>
     <script src="{{url_for('static', filename='js/script.js')}}"></script>
 </body>

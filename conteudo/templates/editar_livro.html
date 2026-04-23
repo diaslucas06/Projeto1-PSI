@@ -1,11 +1,13 @@
-{% extends 'base.html' %}
+{% extends 'base_cadastro.html' %}
 
 {% block title %} Editar Livro {% endblock %}
 
-{% block content %}
+{% block titulo %}
     <h1>Editar Livro</h1>
-    
-    <form action="{{ url_for('editar_livro', indice=indice) }}" method="POST">
+{% endblock %}
+
+{% block form %}
+    <form action="{{ url_for('editar_livro', indice=indice) }}" method="post">
         
         <div>
             <label>Título do Livro:</label>
