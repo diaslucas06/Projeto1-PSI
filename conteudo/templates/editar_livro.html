@@ -9,27 +9,17 @@
 {% block form %}
     <form action="{{ url_for('editar_livro', indice=indice) }}" method="post">
         
-        <div>
             <label>Título do Livro:</label>
             <input type="text" name="titulo" value="{{ livro.titulo }}" required>
-        </div>
-
-        <div>
             <label>Gênero:</label>
             <input type="text" name="genero" value="{{ livro.genero }}" required>
-        </div>
-
-        <div>
             <label>Descrição:</label>
             <textarea name="descricao" required>{{ livro.desc }}</textarea>
-        </div>
-
-        <div>
-            <label>
+            <div>
                 <input type="checkbox" name="lido" {% if livro.lido %} checked {% endif %}>
                 Marcar como lido
-            </label>
-        </div>
+            </div>
+            
 
         <button type="submit">Salvar Alterações</button>
         <a href="{{ url_for('livros_cadastrados') }}">Cancelar</a>

@@ -11,17 +11,19 @@
         {% for livro in livros %} 
             {% if not livro.lido %}
                 <li>
-                    {{livro.titulo}},
-                    {{livro.genero}},
-                    {{livro.desc}}
-
-                    <a href="{{ url_for('editar_livro', indice=loop.index0) }}" class="meu-botao-editar">
-                        <button type="button">Editar</button>
-                    </a>
-        
-                    <form action="{{ url_for('excluir_livro', indice=loop.index0) }}" method="POST" style="display:inline;">
-                        <button type="submit">Excluir</button>
-                    </form>
+                    <h2>{{livro.titulo}}</h2>
+                    <p>{{livro.desc}}</p>
+                    <div class="baixo-li">
+                        <h3><b>Gênero:</b> {{livro.genero}}</h3>
+                        <div class="botoes">
+                            <form action="{{ url_for('editar_livro', indice=loop.index0) }}">
+                                <button>Editar</button>
+                            </form>
+                            <form action="{{ url_for('excluir_livro', indice=loop.index0) }}" method="POST">
+                                <button>Excluir</button>
+                            </form>
+                        </div>
+                    </div>
                 </li>
             {% endif %}
         {% endfor %}
@@ -31,24 +33,29 @@
         {% for livro in livros %} 
             {% if livro.lido %}
                 <li>
-                    {{livro.titulo}},
-                    {{livro.genero}},
-                    {{livro.desc}}
-
-                    <a href="{{ url_for('editar_livro', indice=loop.index0) }}" class="meu-botao-editar">
-                        <button type="button">Editar</button>
-                    </a>
-                    
-                    <form action="{{ url_for('excluir_livro', indice=loop.index0) }}" method="POST" style="display:inline;">
-                        <button type="submit">Excluir</button>
-                    </form>
+                    <h2>{{livro.titulo}}</h2>
+                    <p>{{livro.desc}}</p>
+                    <div class="baixo-li">
+                        <h3><b>Gênero:</b> {{livro.genero}}</h3>
+                        <div class="botoes">
+                            <form action="{{ url_for('editar_livro', indice=loop.index0) }}">
+                                <button>Editar</button>
+                            </form>
+                            <form action="{{ url_for('excluir_livro', indice=loop.index0) }}" method="POST">
+                                <button>Excluir</button>
+                            </form>
+                        </div>
+                    </div>
                 </li>
             {% endif %}
         {% endfor %}
     </ul>
-    <a href="{{url_for('cadastro_livros')}}">Cadastrar mais livros</a>
-   <form action="{{url_for('logout')}}" method="post">
-        <button>Sair</button>
-   </form>
-        
+    <div class="buttons">
+        <form action="{{url_for('cadastro_livros')}}">
+            <button>Cadastrar livros</button>
+        </form>
+        <form action="{{url_for('logout')}}" method="post">
+            <button>Sair</button>
+        </form>
+    </div>
 {% endblock %}
