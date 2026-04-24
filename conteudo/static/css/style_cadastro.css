@@ -25,6 +25,26 @@ input, button, textarea {
     font-size: 20px;
     height: 55px;
     font-family: Arial, Helvetica, sans-serif;
+    border: none;
+}
+
+input {
+    border: 1px solid grey;
+}
+
+input:hover, textarea:hover {
+    background-color: rgb(228, 247, 255);
+}
+
+input:focus, textarea:focus {
+    border: 3px rgb(19, 60, 94) solid;
+    background-color: rgb(217, 242, 253);
+}
+
+button:hover {
+    background-color: rgb(87, 131, 151);
+    transition: 0.5s ease;
+    cursor: pointer;
 }
 
 textarea {
@@ -44,6 +64,7 @@ button {
 .content {
     width: 50%;
     align-items: center;
+    min-width: 300px;
     justify-content: center;
 }
 
@@ -59,4 +80,25 @@ form > div {
     gap: 10px;
     color: white;
     font-size: 20px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 425px) {
+    form {
+        padding: 20px;
+    }
+    label {
+        font-size: 20px;
+    }
+
+    input, button, textarea {
+        font-size: 15px;
+        padding: 10px;
+        height: 40px;
+    }
+    textarea {
+        height: 55px;
+    }
+
 }

@@ -28,6 +28,8 @@ header {
     width: 90%;
     padding: 15px 0px;
     color: white;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .logo {
@@ -60,6 +62,11 @@ h1 {
     font-size: 20px;
 }
 
+.opcoes a:hover {
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -90,6 +97,11 @@ main {
     border-radius: 5px;
 }
 
+.content a:hover {
+    background-color: rgb(25, 44, 58);
+    transition: 0.5s ease;
+}
+
 .livros {
     display: flex;
     flex-direction: column;
@@ -104,11 +116,14 @@ main {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 #livros img {
     width: 13%;
     border-radius: 5px;
+    min-width: 150px;
 }
 
 ul {
@@ -166,6 +181,12 @@ li p {
     border-radius: 5px;
 }
 
+.botoes button:hover {
+    background-color: rgb(228, 247, 255);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
 .buttons {
     display: flex;
     align-items: center;
@@ -180,6 +201,12 @@ li p {
     font-size: 20px;
     height: 55px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttons button:hover {
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 .content > form > a {
@@ -200,4 +227,106 @@ li p {
     text-align: center;
     font-style: italic;
     margin: 10px 0 30px 0;
+}
+
+/* RESPONSIVIDADE */
+
+/* ADAPTAÇÃO DOS LIVROS SUGERIDOS */
+
+@media (max-width: 1342px) {
+    #livro7 {
+        display: none;
+    }
+}
+
+@media (max-width: 1166px) {
+    #livro6 {
+        display: none;
+    }
+}
+
+@media (max-width: 986px) {
+    #livro5 {
+        display: none;
+    }
+}
+
+@media (max-width: 808px) {
+    #livro5, #livro6 {
+        display: block;
+    }
+    #livros {
+        gap: 20px;
+    }
+    .mensagem {
+        width: 100%;
+    }
+}
+
+/* TELAS */
+
+@media (max-width: 768px) {
+    li {
+        width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    #livro7 {
+        display: block;
+    }
+    #livros img {
+        width: 130px;
+        min-width: 130px;
+    }
+    .cabecalho {
+        align-items: center;
+        justify-content: center;
+    }
+    .cabecalho {
+        gap: 15px;
+    }
+    .cabecalho a {
+        font-size: 18px;
+    }
+    .content p {
+        font-size: 16px;
+    }
+    .content a {
+        font-size: 20px;
+    }
+    .mensagem {
+        width: 100%;
+    }
+    h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 375px) {
+    li {
+        padding: 20px;
+    }
+    .baixo-li button {
+        font-size: 16px;
+        padding: 5px;
+    }
+    .livros {
+        padding: 25px;
+    }
+    #livros img {
+        width: 120px;
+        min-width: 120px;
+    }
+}
+
+
+@media (max-width: 320px) {
+    #livros {
+        gap: 10px;
+    }
+    #livros img {
+        width: 110px;
+        min-width: 110px;
+    }
 }
