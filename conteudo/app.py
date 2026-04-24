@@ -1,4 +1,4 @@
-from flask import Flask, request, url_for, redirect, render_template
+from flask import Flask, request, url_for, redirect, render_template, flash
 
 app = Flask(__name__)
 
@@ -83,6 +83,22 @@ def editar_livro(indice):
             "lido": request.form.get('lido') == 'on'
         }
     return redirect(url_for('livros_cadastrados'))
+
+@app.errorhandler(400)
+def error400(error):
+    return render_template('errors/error400.html'), 400
+
+@app.errorhandler(401)
+def error401(error):
+    return render_template('errors/error400.html'), 401
+
+@app.errorhandler(403)
+def error403(error):
+    return render_template('errors/error400.html'), 403
+
+@app.errorhandler(404)
+def error404(error):
+    return render_template('errors/error400.html'), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
