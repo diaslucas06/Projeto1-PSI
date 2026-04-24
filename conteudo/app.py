@@ -90,15 +90,15 @@ def error400(error):
 
 @app.errorhandler(401)
 def error401(error):
-    return render_template('errors/error400.html'), 401
+    return render_template('errors/error401.html'), 401
 
 @app.errorhandler(403)
 def error403(error):
-    return render_template('errors/error400.html'), 403
+    return render_template('errors/error403.html'), 403
 
 @app.errorhandler(404)
 def error404(error):
-    return render_template('errors/error400.html'), 404
+    return render_template('errors/error404.html'), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
