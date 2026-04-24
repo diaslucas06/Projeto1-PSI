@@ -8,8 +8,11 @@
     <h1>Seus livros</h1>
     <h2>Não lidos</h2>
     <ul>
-        {% for livro in livros %} 
+    {% set nao_lidos = namespace(value=0) %}
+    
+        {% for livro in livros %}
             {% if not livro.lido %}
+                {% set nao_lidos.value = nao_lidos.value + 1 %}
                 <li>
                     <h2>{{livro.titulo}}</h2>
                     <p>{{livro.desc}}</p>
@@ -27,11 +30,18 @@
                 </li>
             {% endif %}
         {% endfor %}
+
+        {% if nao_lidos.value == 0 %}
+            <p p class="mensagem">Você não tem livros pendentes.</p>
+        {% endif %}
     </ul>
     <h2>Lidos</h2>
     <ul>
-        {% for livro in livros %} 
+    {% set lidos = namespace(value=0) %}
+    
+        {% for livro in livros %}
             {% if livro.lido %}
+                {% set lidos.value = lidos.value + 1 %}
                 <li>
                     <h2>{{livro.titulo}}</h2>
                     <p>{{livro.desc}}</p>
@@ -49,6 +59,10 @@
                 </li>
             {% endif %}
         {% endfor %}
+
+        {% if lidos.value == 0 %}
+            <p class="mensagem">Nenhum livro lido ainda. Continue lendo!</p>
+        {% endif %}
     </ul>
     <div class="buttons">
         <form action="{{url_for('cadastro_livros')}}">
