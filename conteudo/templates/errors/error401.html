@@ -6,6 +6,8 @@
 
 {% block content %}
     <h1>Erro 401</h1>
-    <p>Descrição do erro</p>
+    <p>Essa página não pode ser acessada sem autenticação!</p>
+    <p><b>Soluções principais:</b> verificar login e senha, verificar a URL, limpar cache/cookies e verificar permissão de acesso.</p>
+
     <a href="{{url_for('index')}}">Voltar para a tela inicial ></a>
 {% endblock %}
