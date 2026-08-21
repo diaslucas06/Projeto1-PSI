@@ -2,7 +2,6 @@ from flask import Flask, request, url_for, redirect, render_template, flash
 from flask_login import LoginManager, login_required, logout_user, login_user, current_user
 from werkzeug.security import check_password_hash, generate_password_hash
 from .db import User, Livro, Genero, db, session
-from .models.usuario import Usuario
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'super_segredo'
